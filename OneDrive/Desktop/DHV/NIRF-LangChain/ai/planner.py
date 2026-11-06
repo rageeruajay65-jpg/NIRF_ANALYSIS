@@ -1,4 +1,4 @@
-
+import os
 from typing import Literal
 from pydantic import BaseModel, Field
 from dotenv import load_dotenv
@@ -61,6 +61,7 @@ class AnalysisPlan(BaseModel):
 
 llm = ChatGoogleGenerativeAI(
     model="gemini-3.5-flash-lite",
+     google_api_key=os.getenv("GOOGLE_API_KEY"),
     timeout=60,
     max_retries=2
 )
