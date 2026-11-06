@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NIRF AI Analytics Dashboard</title>
+
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <header>
+            <div>
+                <h1>NIRF AI Analytics</h1>
+                <p>Intelligent Ranking Analysis | 2017–2025</p>
+            </div>
+
+            <span class="status">
+                ● Backend Connected
+            </span>
+        </header>
+
+        <main>
+
+            <section class="welcome">
+                <h2>Explore NIRF Rankings with AI</h2>
+
+                <p>
+                    Ask questions about institutions, states,
+                    rankings, scores, trends and performance.
+                </p>
+            </section>
+
+            <section class="chat-section">
+
+                <div class="suggestions">
+                    <button onclick="useQuestion('Show the top 10 Engineering institutions in 2025')">
+                        Top 10 institutions
+                    </button>
+
+                    <button onclick="useQuestion('Compare Tamil Nadu and Kerala rankings in 2025')">
+                        Compare states
+                    </button>
+
+                    <button onclick="useQuestion('Show IIT Madras ranking trend from 2017 to 2025')">
+                        Ranking trends
+                    </button>
+
+                    <button onclick="useQuestion('Show correlation between TLR and RPC in 2025')">
+                        Parameter correlation
+                    </button>
+                </div>
+
+                <div class="input-area">
+
+                    <textarea
+                        id="questionInput"
+                        placeholder="Ask anything about NIRF rankings..."
+                        rows="3"
+                    ></textarea>
+
+                    <button id="askButton" onclick="askQuestion()">
+                        Analyze
+                    </button>
+
+                </div>
+
+                <p id="loading" hidden>
+                    AI is analyzing your question...
+                </p>
+
+                <p id="errorMessage" class="error"></p>
+
+            </section>
+
+            <section id="results" hidden>
+
+                <div class="answer-card">
+                    <h3>AI Analysis</h3>
+                    <p id="answerText"></p>
+                </div>
+
+                <div class="chart-card" id="chartCard" hidden>
+                    <h3 id="chartHeading">Visualization</h3>
+                    <div id="chart"></div>
+                </div>
+
+                <div class="table-card" id="tableCard" hidden>
+                    <h3>Detailed Results</h3>
+                    <div class="table-container">
+                        <table id="resultTable"></table>
+                    </div>
+                </div>
+
+                <div class="statistics-card" id="statisticsCard" hidden>
+                    <h3>Statistics</h3>
+                    <div id="statistics"></div>
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer>
+            NIRF AI Analytics Dashboard | Academic Project
+        </footer>
+
+    </div>
+
+    <script src="/static/script.js"></script>
+
+</body>
+</html>
